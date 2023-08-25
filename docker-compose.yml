@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  neuromorphic-checkpoint-one:
+    tty: true
+    image: "eduardomatoss/neuromorphic-checkpoint-one"
+    stdin_open: true
+    build:
+      context: .
+      target: "development"
+    volumes:
+      - ".:/app"
+    ports:
+      - "5000:5000"
+    networks:
+      - db_nw
+
+networks:
+  db_nw:
+    driver: bridge
