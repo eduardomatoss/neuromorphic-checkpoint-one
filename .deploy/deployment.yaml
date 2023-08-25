@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app-cp
+  template:
+    metadata:
+      labels:
+        app: flask-app-cp
+    spec:
+      containers:
+      - name: flask-app-cp
+        image: eduardomatoss/neuromorphic-checkpoint-one
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
