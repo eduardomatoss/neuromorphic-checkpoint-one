@@ -31,6 +31,25 @@ make docker/run
 
 *The project will be running at `http://localhost:5000/`*
 
+### How to Deploy
+
+#### Kubernetes Deployment Quick Guide
+
+This quick guide provides a summarized version of the steps to deploy your system on Kubernetes using the provided script and YAML files.
+
+#### pre-requisites
+
+- **Kubernetes Cluster:** Access to a Kubernetes cluster ([microK8s](https://microk8s.io/) assumed).
+
+- **kubectl:** Installed and configured via [microk8s](https://microk8s.io/).
+
+#### Run Deployment Script:
+
+``` sh
+chmod +x .deploy/deploy.sh
+./.deploy/deploy.sh <namespace>
+```
+
 **Helpful commands**
 
 *Please, check all available commands in the [Makefile](Makefile) for more information*.
