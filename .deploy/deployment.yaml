@@ -14,10 +14,11 @@ spec:
     spec:
       containers:
       - name: flask-app-cp
-        image: eduardomatoss/neuromorphic-checkpoint-one
+        image: eduardomatoss/neuromorphic-checkpoint-one:latest
+        command: ["python", "run.py"]
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "212Mi"
+            cpu: "200m"
         ports:
         - containerPort: 5000
